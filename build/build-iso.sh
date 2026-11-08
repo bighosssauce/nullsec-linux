@@ -14,11 +14,14 @@ if [ -d "config" ]; then
 fi
 
 lb config \
+    --mode debian \
     --distribution bookworm \
     --architectures "${ARCH}" \
     --binary-images iso-hybrid \
     --debian-installer false \
-    --archive-areas "main contrib non-free non-free-firmware"
+    --archive-areas "main contrib non-free non-free-firmware" \
+    --mirror-bootstrap "http://deb.debian.org/debian/" \
+    --mirror-binary "http://deb.debian.org/debian/"
 
 sudo lb build
 

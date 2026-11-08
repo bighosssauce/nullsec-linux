@@ -13,7 +13,7 @@ jobs:
       - name: Install Dependencies and Patch live-build
         run: |
           sudo apt-get update
-          sudo apt-get install -y live-build debootstrap
+          sudo apt-get install -y live-build debootstrap isolinux syslinux-common
           sudo sed -i 's|dists/\${LB_PARENT_DISTRIBUTION}/Contents-|dists/\${LB_PARENT_DISTRIBUTION}/main/Contents-|g' /usr/lib/live/build/lb_chroot_linux-image
 
       - name: Build ISO

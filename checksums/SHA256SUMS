@@ -1,19 +1,19 @@
 # NullSec Linux 5.0.0 SHA256 Checksums
-# Generated: 2026-01-23T19:12:20Z
+# Generated: 2026-11-08T11:38:23Z
 
-e4db42a5df562ed163d9272cbff7f35445840ec6110df526f275dd79a5ffee2c  nullsec-5.0.0-standard-amd64.iso
-14d092fd2dbfeb52b697d50a340729493d2da6c34734d68a3e6b78c2d5d4144d  nullsec-5.0.0-standard-arm64.iso
-ca3ab5f3f7af943059056f77f273941eb3f4e7352230300ba06b3c9fe76a0871  nullsec-5.0.0-minimal-amd64.iso
-e3867c67fa5e0c5ac02c18400f92e7219524d39b36156e1cf0b1d3d98841d31d  nullsec-5.0.0-minimal-arm64.iso
-bed27d3c7e9b81853418572bdc0b66ef9a110309f7e7b8c7c3583f19347d568a  nullsec-5.0.0-live-amd64.iso
-81737596fd04f07500ad29bfa9d6b00067f1456d3325f08a817cfff686e3b582  nullsec-5.0.0-live-arm64.iso
-06d970f0061ca109c94527ebd6355d53788c5a63d4432ba7e163e3a7e3a43c87  nullsec-5.0.0-cloud-amd64.iso
-4fd6dbe5e9a4cdb5186407370daa996fe944d59e381922005b90f0efbed2467b  nullsec-5.0.0-cloud-arm64.iso
-2bb71f02daece96820a72ad5ff2fb13aa0a281f0112e7779d8ed19475bf70141  nullsec-5.0.0-aiml-amd64.iso
-7572f029c0091cb1457dc46b0c4649673ba486915f07b2efba3c39fe5e2dbf03  nullsec-5.0.0-aiml-arm64.iso
-e840baae2b8a43829b61c85241d714cadd04fd227f04f9741baf627d86c9f111  nullsec-5.0.0-hardware-amd64.iso
-1350d51682eaf1da654b78652a6f90af3eeafc51a9ceaf61623240b0ab665567  nullsec-5.0.0-hardware-arm64.iso
-f546fbb33d9af66ce1c5903a1ce50262e7fa947822b99adb557e2744a678811a  nullsec-5.0.0-automotive-amd64.iso
-bb3195fea4f31f995e72a8cafd0fecc7dd2a398cc00b6bbf4ce40d3b5f75317b  nullsec-5.0.0-mobile-amd64.iso
-2969f39715e3e213ccbfb8680eb52bad483bd7a032891f9ce3a3be73943d563d  nullsec-5.0.0-mobile-arm64.iso
-7c9bbebd28f80c25de9b55658e729a634ab17813aa66aa78e764b1778d0aa374  nullsec-5.0.0-forensics-amd64.iso
+aaecbaca3277ebed8452d8448fa29d1122d06ad7d77e6b5414456ec9bad39a30  nullsec-5.0.0-standard-amd64.iso
+482e425af0a571b0b59a0ea910ffe0be75cedb7ffd3aad17b35cb8dfa3f87525  nullsec-5.0.0-standard-arm64.iso
+9c0023ecf99856aae759c5ca18094f7b6158e717bdf37dc30b1effc3740e3925  nullsec-5.0.0-minimal-amd64.iso
+5629f2daa8c46decc8fd9343610b3ae3d98d534b512597d167db10099fc3a2c6  nullsec-5.0.0-minimal-arm64.iso
+27f9154fa74c6aaa4c496418400b1083f71a23d9afdf7edd2a32b27b9ae749eb  nullsec-5.0.0-live-amd64.iso
+36c257ae05a9d28268cc4072b13cc5ead6d08da3e47d08a972afe33d6ce9e195  nullsec-5.0.0-live-arm64.iso
+145a07e88084d7b1d993abd7e0c5167e4e962ff95f239dd6cdedbca9fa8e092a  nullsec-5.0.0-cloud-amd64.iso
+c74425b4c7e3eb0594f8a06810ebf3bd53c8ebd3e4db22d0e7acd787325f788f  nullsec-5.0.0-cloud-arm64.iso
+33d8eb29496b3431ff1f5b522eb1b166fa6f1f48509ad4e3305c36da48da16f7  nullsec-5.0.0-aiml-amd64.iso
+f6a015027fdada0e3c77c69d065f68e44532c89dd0c802d28bcdd8ec5b8e1e12  nullsec-5.0.0-aiml-arm64.iso
+624e1bf20f7e1dced8a8f2e108aab4f7227cecd2c9b7ddb6a9fa3a1775170361  nullsec-5.0.0-hardware-amd64.iso
+740a4c097b11c9afe2700e181474ac2690c6b13b51d42eb2a09cc57aaf421312  nullsec-5.0.0-hardware-arm64.iso
+2c9298fe3446872390893a37c33016f9390a04e8b8553db8fcc5cb6c9bc79463  nullsec-5.0.0-automotive-amd64.iso
+06e41e362bd00ee226e308892990394578aa3a7d127b084c9efbbd02f16b679e  nullsec-5.0.0-mobile-amd64.iso
+438adf4967c6367191d2f826fa1f601a53f85e0fe9611e1e685080c5f8aa34f1  nullsec-5.0.0-mobile-arm64.iso
+16ce6318cb07f305d215d9bfa354e82c03d60473beb19f807e3cb6cd874643b1  nullsec-5.0.0-forensics-amd64.iso

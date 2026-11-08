@@ -14,9 +14,9 @@
 set -e
 
 VERSION="4.0.0"
-NULLSEC_HOME="${NULLSEC_HOME:-/opt/nullsec}"
-BIN_DIR="/usr/local/bin"
-CONFIG_DIR="/etc/nullsec"
+NULLSEC_HOME="${NULLSEC_HOME:-$PREFIX/opt/nullsec}"
+BIN_DIR="$PREFIX/bin"
+CONFIG_DIR="$PREFIX$PREFIX/etc/nullsec"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -43,16 +43,13 @@ log_success() { echo -e "${GREEN}[✓]${NC} $1"; }
 log_warn() { echo -e "${YELLOW}[!]${NC} $1"; }
 log_error() { echo -e "${RED}[✗]${NC} $1"; }
 
-check_root() {
-    if [[ $EUID -ne 0 ]]; then
-        log_error "This script must be run as root"
-        exit 1
-    fi
+check_root() { 
+return 0
 }
 
 detect_distro() {
-    if [[ -f /etc/os-release ]]; then
-        . /etc/os-release
+    if [[ -f $PREFIX/etc/os-release ]]; then
+        . $PREFIX/etc/os-release
         DISTRO=$ID
         log_info "Detected: $PRETTY_NAME"
     else
@@ -173,7 +170,7 @@ create_commands() {
     cat > "$BIN_DIR/nullsec-update" << 'CMD'
 #!/bin/bash
 echo "[*] Updating NullSec tools..."
-cd /opt/nullsec/modules
+cd $PREFIX/opt/nullsec/modules
 for tool in */; do
     echo "  Updating $tool..."
     cd "$tool" && git pull -q 2>/dev/null
@@ -186,7 +183,7 @@ CMD
     cat > "$BIN_DIR/nullsec-fetch" << 'CMD'
 #!/bin/bash
 echo "[*] Fetching latest tools from bad-antics..."
-cd /opt/nullsec/modules
+cd $PREFIX/opt/nullsec/modules
 gh repo list bad-antics --limit 100 | grep nullsec | while read repo rest; do
     name=$(basename "$repo")
     if [[ ! -d "$name" ]]; then
@@ -244,8 +241,8 @@ while [[ $# -gt 0 ]]; do
             echo "[✓] MAC addresses randomized"
             ;;
         --dns)
-            echo "nameserver 9.9.9.9" > /etc/resolv.conf
-            echo "nameserver 149.112.112.112" >> /etc/resolv.conf
+            echo "nameserver 9.9.9.9" > $PREFIX/etc/resolv.conf
+            echo "nameserver 149.112.112.112" >> $PREFIX/etc/resolv.conf
             echo "[✓] DNS set to Quad9"
             ;;
     esac
@@ -256,7 +253,7 @@ CMD
     # nullsec (main command)
     cat > "$BIN_DIR/nullsec" << 'CMD'
 #!/bin/bash
-NULLSEC_HOME="/opt/nullsec"
+NULLSEC_HOME="$PREFIX/opt/nullsec"
 
 show_banner() {
     echo -e "\033[35m"

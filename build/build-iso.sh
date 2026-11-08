@@ -24,23 +24,6 @@ lb config \
     --mirror-bootstrap "http://deb.debian.org/debian/" \
     --mirror-binary "http://deb.debian.org/debian/"
 
-# Provision both /root/isolinux and local config bootloaders to satisfy live-build completely
-sudo mkdir -p /root/isolinux config/bootloaders/isolinux
-for src_dir in /usr/lib/ISOLINUX /usr/share/syslinux /usr/lib/syslinux/modules/bios; do
-    if [ -f "$src_dir/isolinux.bin" ]; then
-        sudo cp "$src_dir/isolinux.bin" /root/isolinux/
-        sudo cp "$src_dir/isolinux.bin" config/bootloaders/isolinux/
-    fi
-    if [ -f "$src_dir/vesamenu.c32" ]; then
-        sudo cp "$src_dir/vesamenu.c32" /root/isolinux/
-        sudo cp "$src_dir/vesamenu.c32" config/bootloaders/isolinux/
-    fi
-done
-sudo cp /usr/lib/syslinux/modules/bios/*.c32 /root/isolinux/ 2>/dev/null || true
-sudo cp /usr/lib/syslinux/modules/bios/*.c32 config/bootloaders/isolinux/ 2>/dev/null || true
-sudo cp /usr/share/syslinux/*.c32 /root/isolinux/ 2>/dev/null || true
-sudo cp /usr/share/syslinux/*.c32 config/bootloaders/isolinux/ 2>/dev/null || true
-
 sudo lb build
 
 if [ -f "binary.iso" ]; then

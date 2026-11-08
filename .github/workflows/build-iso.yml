@@ -14,7 +14,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y live-build debootstrap isolinux syslinux-common
+          # 1. Patch Contents mirror path bug
           sudo sed -i 's|dists/\${LB_PARENT_DISTRIBUTION}/Contents-|dists/\${LB_PARENT_DISTRIBUTION}/main/Contents-|g' /usr/lib/live/build/lb_chroot_linux-image
+          # 2. Strip out bootlogo requirement entirely from live-build binary stage
+          sudo sed -i '/bootlogo/d' /usr/lib/live/build/lb_binary_syslinux || true
 
       - name: Build ISO
         run: |

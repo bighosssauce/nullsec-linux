@@ -24,6 +24,18 @@ lb config \
     --mirror-bootstrap "http://deb.debian.org/debian/" \
     --mirror-binary "http://deb.debian.org/debian/"
 
+# Ensure isolinux files exist where live-build expects them
+sudo mkdir -p /root/isolinux
+for path in /usr/lib/ISOLINUX /usr/share/syslinux /usr/lib/syslinux/modules/bios; do
+    if [ -f "$path/isolinux.bin" ]; then
+        sudo cp "$path/isolinux.bin" /root/isolinux/
+    fi
+    if [ -f "$path/vesamenu.c32" ]; then
+        sudo cp "$path/vesamenu.c32" /root/isolinux/
+    fi
+done
+sudo cp /usr/lib/syslinux/modules/bios/*.c32 /root/isolinux/ 2>/dev/null || true
+
 sudo lb build
 
 if [ -f "binary.iso" ]; then
